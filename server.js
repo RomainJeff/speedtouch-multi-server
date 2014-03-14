@@ -7,10 +7,10 @@
 var io = require('socket.io').listen(8080, { log: false });
 var md5 = require('MD5');
 
-io.configure(function () {
-  io.set("transports", ["xhr-polling"]);
-  io.set("sync disconnect on unload", true);
-});
+// io.configure(function () {
+//   io.set("transports", ["xhr-polling"]);
+//   io.set("sync disconnect on unload", true);
+// });
 
 console.log('Server running');
 
