@@ -9,7 +9,6 @@ var md5 = require('MD5');
 
 io.configure(function () {
   io.set("transports", ["xhr-polling"]);
-  io.set("polling duration", 10);
 });
 
 console.log('Server running');
