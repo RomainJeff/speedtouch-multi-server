@@ -4,7 +4,7 @@
  * Tous droits réservés 2013
  */
 
-var io = require('socket.io').listen(1338, { log: false });
+var io = require('socket.io').listen(80, { log: false });
 var md5 = require('MD5');
 
 console.log('Server running');
