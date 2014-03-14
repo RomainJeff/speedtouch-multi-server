@@ -4,8 +4,19 @@
  * Tous droits réservés 2013
  */
 
-var io = require('socket.io').listen(1338, { log: false });
+var http = require('http');
+
+http.createServer(function (req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+}).listen(1337);
+
+var io = require('socket.io').listen(http);
 var md5 = require('MD5');
+
+io.configure(function () {
+  io.set("transports", ["xhr-polling"]);
+  io.set("polling duration", 10);
+});
 
 console.log('Server running');
 
