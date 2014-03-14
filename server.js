@@ -4,13 +4,7 @@
  * Tous droits réservés 2013
  */
 
-var http = require('http');
-
-http.createServer(function (req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-}).listen(1337);
-
-var io = require('socket.io').listen(http);
+var io = require('socket.io').listen(80, { log: false });
 var md5 = require('MD5');
 
 io.configure(function () {
