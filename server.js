@@ -154,6 +154,13 @@ io.sockets.on('connection', function (socket) {
 
 });
 
+/**
+ *
+ * Retourne le nombre d'utilisateurs connectes
+ * @param users
+ * @return int
+ *
+ */
 function getLength(users)
 {
     var i = 0;
@@ -165,6 +172,12 @@ function getLength(users)
     return i;
 }
 
+/**
+ *
+ * Envois l'ordre de buzzer aux terminaux connectes
+ * @param socket
+ *
+ */
 function buzzer(socket)
 {
     var delai = (Math.random() * 10000);
@@ -181,6 +194,14 @@ function buzzer(socket)
     }, delai);
 }
 
+/**
+ *
+ * Re-initialise les scores des utilisateurs
+ * Redirige les utilisateurs sur la page d'accueil
+ * @param users
+ * @return object
+ *
+ */
 function resetScores(users)
 {
     for(var k in users) {
